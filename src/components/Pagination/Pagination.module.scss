@@ -1,0 +1,60 @@
+.pagination {
+  position: absolute;
+  right: 36px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  @media (max-width: 1105px) {
+    position: relative;
+    right: auto;
+    margin-left: auto;
+    bottom: auto;
+    margin-top: 30px;
+  }
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+  &__rows {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    @media (max-width: 600px) {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+  &__text {
+    margin-right: 8px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 166%;
+    letter-spacing: 0.4px;
+  }
+  &__select {
+    div {
+      padding: 0;
+    }
+    svg {
+      top: -3px;
+      right: 5px;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+  &__pages {
+    margin-right: 45px;
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 166%;
+    letter-spacing: 0.4px;
+    font-size: 12px;
+  }
+  button {
+    border: none;
+    background: none;
+    img {
+      width: 8px;
+      height: 12px;
+    }
+  }
+}
