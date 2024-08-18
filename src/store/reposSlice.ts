@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { Repo } from "../types/Repo";
-import { GITHUB_TOKEN } from "../config";
 
 // Интерфейс описывает состояние среза репозиториев
 interface ReposState {
@@ -23,12 +22,7 @@ export const fetchRepos = createAsyncThunk(
   async function (username: string, { rejectWithValue }) {
     try {
       const response = await axios.get(
-        `https://api.github.com/users/${username}/repos`,
-        {
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-          },
-        }
+        `https://api.github.com/users/${username}/repos`
       );
       return response.data; // Возвращает данные репозиториев в случае успеха
     } catch (error) {
